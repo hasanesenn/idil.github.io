@@ -1,0 +1,90 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Videos To Watch</title>
+  <link rel="stylesheet" type="text/css" href="videos.css">
+  <link href="https://fonts.googleapis.com/css?family=Notable&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+ 
+  <!-- GoogleFonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Press+Start+2P&display=swap" rel="stylesheet">  
+
+  <!--Font Awesome Link-->
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+	
+	  <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Millenial Bump</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  	<li> <a href='/blog'>Blog</a> </li>
+					<li> <a href='/contact'>Contact</a></li>
+					
+					<% if(!currentUser){ %>
+                        <li> <a href='/login'>Login</a></li>
+					    <li> <a href='/register'>Sign Up</a></li>
+
+                    <%  } else { %>
+                        <li><a href="#">Signed in as: <%=currentUser.username%></a></li>
+                        <li> <a href='/logout'>Logout</a></li>
+                    <%  } %>
+            
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+	
+	<div class="center">
+  <h1>Videos To Watch</h1>
+  <iframe class="center" width="560" height="315" src="https://www.youtube.com/watch?v=wgAahUsgmi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+ <br>
+ <br>
+ <iframe class="center" width="560" height="315" src="https://www.youtube.com/watch?v=wgAahUsgmi4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <br>
+  <br>
+  <iframe class="center" width="560" height="315" src="https://www.youtube.com/watch?v=VmIg69-9gYg&t=633s" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+  </div>
+
+
+</body>
+</html>
+	
+	
+	<style>
+	
+body{
+	background:  url(https://www.elsetge.cat/myimg/f/24-249951_hq-high-resolution-colorful-backgrounds.jpg);
+}
+
+h1{
+	  color:pink;
+	 font-family: 'Notable', sans-serif; 
+	margin-left: 75px;;
+	 text-decoration: underline;
+	 font-size: 80px;
+
+}
+ 
+ nav{
+ position: fixed;
+ top: 0%;
+ }
+h1:hover { 
+	color: blue; 
+	} /* CSS link hover (blue) */
+
+.center {
+
+	margin-left: 200px;
+	margin-top: 50px;
+}
+</style>

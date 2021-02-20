@@ -1,0 +1,150 @@
+ <html>
+    <head>
+        <title>Millenial Bump</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+				<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        
+		 <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Millenial Bump</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  	<li> <a href='/blog'>Blog</a> </li>
+					<li> <a href='/contact'>Contact</a></li>
+					
+					<% if(!currentUser){ %>
+                        <li> <a href='/login'>Login</a></li>
+					    <li> <a href='/register'>Sign Up</a></li>
+
+                    <%  } else { %>
+                        <li><a href="#">Signed in as: <%=currentUser.username%></a></li>
+                        <li> <a href='/logout'>Logout</a></li>
+                    <%  } %>
+            
+                </ul>
+            </div>
+        </div>
+    </nav>
+<div class="about-section">
+  <h1>About Me</h1>
+  
+</div>
+
+<h2 style="text-align:center"></h2>
+
+
+  <div class="column">
+    <div class="card">
+      <img src="https://static.wixstatic.com/media/b11283_e45ce1f4517541bc8cce3dccd13cf416~mv2_d_1536_2048_s_2.jpg/v1/fill/w_660,h_880,al_c,q_85,usm_0.66_1.00_0.01/10321115_812544945435334_868252232250485.webp" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Nazli Offringa</h2>
+        <p class="title"></p>
+        <p> Health and science journalist.</p>
+        <p>mike@example.com</p>
+      </div>
+    </div>
+  </div>
+		
+		 <div class="naz">
+			 <div class="naz"></div>
+        <p> 
+Hi! I’m Nazli Senyuva, a health and science journalist, women’s health scholar, PhD candidate and lecturer at USC. Maternal health has been a true passion of mine and a topic I have studied and researched for many years. While exploring first time pregnant moms’ decision making process for my PhD dissertation, and being fascinated by everything I found out, I found myself asking: how come a 28-year-old daughter of two surgeons, who is about to get her 3rd academic degree, know NOTHING when it comes to pregnancy, childbirth, or postpartum??
+			<p>
+This is why I launched The Millennial Bump. As millennial women we have to be more educated about birth BEFORE we get pregnant. Trust me, there is a lot to digest, and you might not have enough time, patience, or energy to equip yourself with the necessary knowledge when you get pregnant.⁣
+			 </p>
+⁣             <p>
+You can be someone who has never given birth before, you can be pregnant now, or maybe you’re already a mom/parent—no matter where you are in your journey, this platform is for you. We will learn, explore, and ask questions together, hear from experts and one another. So when the time comes, we will make fully informed decisions for ourselves and our babies, and won’t fear the “unknown”. ⁣</p>
+      </div>
+  
+
+ 
+		<style>
+		body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+			}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 33.3%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  /* margin: 20px; */
+  margin: 10px;
+	
+
+			}
+			.naz {
+font-family: 'Abel', sans-serif;
+;
+
+
+			}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #D2AED1;
+  color: #E80A71;
+	font-family:'Amatic SC', cursive;
+	font-size:75px;
+	
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 38%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+			</style>
+</body>
+</html>

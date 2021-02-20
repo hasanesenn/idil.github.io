@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To Dos </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="stylesheets/todos.css">
+
+ 
+</head>
+<body>
+      <!-- <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Millenial Bump</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  	<li> <a href='/blog'>Blog</a> </li>
+					<li> <a href='/contact'>Contact</a></li>
+					
+					<% if(!currentUser){ %>
+                        <li> <a href='/login'>Login</a></li>
+					    <li> <a href='/register'>Sign Up</a></li>
+
+                    <%  } else { %>
+                        <li><a href="#">Signed in as: <%=currentUser.username%></a></li>
+                        <li> <a href='/logout'>Logout</a></li>
+                    <%  } %>
+            
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+		
+    <div id="container">
+        <div id="header">
+            <input type="text" id="title" placeholder="To-Do List">
+            <i class="fa fa-pencil" aria-hidden="true"></i>
+        </div>
+        
+        <input type="text" id="items" placeholder="Add New Item">
+        
+        <ul>
+            <li><span><i class='fa fa-trash-o'></i></span> Buy gum</li>
+            <li><span><i class='fa fa-trash-o'></i></span> Do comp sci hmw</li>
+            <li><span><i class='fa fa-trash-o'></i></span> Workout</li>
+         
+        </ul>
+		<style>
+		body {
+	font-family: 'Roboto', sans-serif;
+	background-image: linear-gradient(to right, #3ab5b0 0%, #3d99be 31%, #56317a 100%);
+    cursor: default;
+}
+
+#container {
+    opacity: 0;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+    width: 330px;
+    margin: 80px auto;
+    background-color: #f7f7f7;
+}
+
+#header {
+    width: 100%;
+    border: 0;
+    margin: 0;
+    color: #ffffff;
+    background-color: black;
+    text-transform: uppercase;
+    font-size: 24px;
+	font-weight: 600;
+}
+
+#title {
+    color: #ffffff;
+    background-color: black;
+    margin: 0;
+    border: 0;
+    padding: 10px 20px;
+	text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 400;
+    width: 64%;
+}
+
+#title::-webkit-input-placeholder {
+  color: #ffffff;
+}
+#title::-moz-placeholder {
+  color: #ffffff;
+}
+#title:-ms-input-placeholder {
+  color: #ffffff;
+}
+#title:-moz-placeholder {
+  color: #ffffff;
+}
+
+#title:focus {
+    outline: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    color: #666;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+}
+
+li::selection {
+    background: none;
+}
+
+li:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+span {
+    background-color: purple;
+    color: #fff;
+    height: 40px;
+    width: 0;
+    opacity: 0;
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+    transition: all 200ms linear;
+}
+
+li:hover span {
+    width: 40px;
+    opacity: 1;
+}
+
+#items {
+    color: #232323;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 18px;
+    background-color: #f7f7f7;
+    border: 3px solid rgba(0,0,0,0);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    padding: 13px 13px 13px 20px;
+    height: 40px;
+}
+
+#items:focus {
+    background: #ffffff;
+    border: 3px solid #232323;
+    outline: 0;
+}
+
+.fa-pencil {
+    float: right;
+    margin: 10px 20px 10px 10px;
+    z-index: 1;
+}
+
+.fa-trash-o {
+    line-height: 40px;
+}
+
+.done {
+    color: gray;
+    text-decoration: line-through;
+}</style>
+	</div>
+	<script src="/Users/idiloksuz/Desktop/COMPUTER SCIENCE/project/assets/JS/ToDos.js"></script>
+	
+<script> 
+	
+
+$(document).ready(function(){
+
+	$('#container').animate({opacity: 1}, 600, "linear");
+	// toggle to-do item completion
+	$('ul').on('click', 'li', function(){
+			// on click adds listeners for all potential future elements
+			// whereas click only adds listeners for existing elements
+		$(this).toggleClass('done').blur();
+	});
+    //only add listener using jquery that exist when the code is run for the first time
+	// the listener will accept any added arguments 
+	
+	// remove to-do item (prevent event bubbling)
+	$('ul').on('click', 'span', function(event){
+		$(this).parent().fadeOut(500, function(){
+			$(this).remove(); // this is the callback
+		}); // function that runs after item fades
+		event.stopPropagation(); // stops bubbling
+	});
+	
+	$('#items').on('keypress', function(event){
+		if(event.which === 13 && $(this).val() !== "") {
+		 	// val creates an empty placeholder
+		    // so that when we want to write again nothing is written on it 
+		    // empties it
+			// if ENTER pressed & input not blank
+			var newToDo = $(this).val().replace(/</g, "&lt;").replace(/>/g, "&gt;"); // save input to var
+			$('ul').append('<li><span><i class="fa fa-trash-o"></i></span> ' + newToDo + '</li>'); // append html and to-do content to ul
+			 // new element called append 
+	         // adding todos to the ul on the page and appending li's to the ul
+             // adds li inside the ul in the HTML
+			$(this).val("").blur(); // clear input
+		}
+	});
+	
+	$("#title").on('keypress', function(event){
+		if(event.which === 13) {
+			var title = $(this).val().replace(/</g, "").replace(/>/g, "");
+			$(this).attr("placeholder", title).blur();
+		}
+	});
+	
+	$('.fa-pencil').on('click', function(){
+		$('#items').fadeToggle();
+	});
+	
+	});</script>
+
+</body>
+</html>

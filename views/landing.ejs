@@ -1,0 +1,161 @@
+<html>
+    <head>
+        <title>Millenial Bump</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">       
+		<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+integrity="sha384-
+BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/stylesheets/landing.css">
+	 <link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Millenial Bump</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                <li> <a href='/blog'>Blog</a> </li> 
+				<!-- <li>
+					<div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="/blog" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" >
+Blog  </a>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <a class="dropdown-item" href="/calendar">Events Calendar</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+ </div> 
+</div>
+		</li>	 -->
+					<li> <a href='/contact'>Contact</a></li>
+					
+					<% if(!currentUser){ %>
+                        <li> <a href='/login'>Login</a></li>
+					    <li> <a href='/register'>Sign Up</a></li>
+
+                    <%  } else { %>
+                        <li><a href="#">Signed in as: <%=currentUser.username%></a></li>
+                        <li> <a href='/logout'>Logout</a></li>
+                    <%  } %>
+            
+                </ul>
+            </div>
+        </div>
+    </nav>
+	<section class="container-fluid px-0">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div id="headingGroup" class="text-white text-center d-none d-lg-block mt-5">
+                    <h1 class="">MILLENIAL<span>/</span>BUMP</h1>
+                    <h1 class="">MILLENIAL<span>/</span>BUMP</h1>
+                    <h1 class="">MILLENIAL<span>/</span>BUMP</h1>
+                    <h1 class="">MILLENIAL<span>/</span>BUMP</h1>
+                    <h1 class="">MILLENIAL<span>/</span>BUMP</h1>
+                    <h1 class="">MILLENIAL<span>/</span>BUMP</h1>
+                    <h1 class="">MILLENIAL<span>/</span>BUMP</h1>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img class="img-thumbnail" src="https://static.wixstatic.com/media/b11283_8a707241af0f432b94fe318f99bd8f62~mv2_d_3024_3024_s_4_2.jpg/v1/fill/w_920,h_920,al_c,q_85,usm_0.66_1.00_0.01/IMG_2265_JPG.webp" size= 50px alt="">
+            </div>
+        </div>
+    </section>
+
+   
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+    <script>
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#mainNavbar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+	<style>
+		
+		h1{
+    color: black;
+}
+
+body {
+    background: #f5d9d5;
+    font-family: "Nunito", sans-serif;
+}
+
+.blurb h2 {
+   color: #EA1C2C;
+   font-weight: 100;
+   font-size: 2.5rem;
+}
+
+.blurb p {
+    color: #f498b8;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;    
+}
+
+#mainNavbar .nav-link {
+    color: white;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #EA1C2C;
+}
+
+#mainNavbar .navbar-brand {
+    color: #EA1C2C;
+    font-size: 1.5rem;
+}
+
+#headingGroup span {
+    color: #EA1C2C;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+.navbar.scrolled {
+    background: rgb(222,192,222);
+    transition: background 500ms;
+}
+
+@media (max-width: 1200px) {
+    #headingGroup h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+    .blurb h2 {
+        font-size: 2rem;
+    }
+}
+
+
+	</style>
+</body>
+
+</html>
+	</body>
+			
+</html>

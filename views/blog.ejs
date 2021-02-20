@@ -1,0 +1,197 @@
+<html>
+    <head>
+        <title>Millenial Bump</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/stylesheets/main.css">
+		<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+         <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">Millenial Bump</a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  	<li> <a href='/blog'>Blog</a> </li>
+					<li> <a href='/contact'>Contact</a></li>
+					
+					<% if(!currentUser){ %>
+                        <li> <a href='/login'>Login</a></li>
+					    <li> <a href='/register'>Sign Up</a></li>
+
+                    <%  } else { %>
+                        <li><a href="#">Signed in as: <%=currentUser.username%></a></li>
+                        <li> <a href='/logout'>Logout</a></li>
+                    <%  } %>
+            
+                </ul>
+            </div>
+        </div>
+    </nav>
+		
+<!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <!-- Blog Entries Column -->
+      <!-- <div class="col-md-8">
+ -->
+		<h1>
+			MILLENIAL BUMP
+		</h1>
+        <!-- <img src= "https://static.wixstatic.com/media/b11283_adde070f8ed945edb615e348fd5e57e4~mv2_d_1234_1223_s_2.png/v1/fill/w_385,h_382,al_c,q_85,usm_0.66_1.00_0.01/millenial_bump_logo_FINAL-01.webp" class=""> 
+          <small></small>
+		 -->
+        <!-- Categories Widget -->
+   <div class="card my-4"> 
+          <h5 class="card-header">Categories</h5>
+          <div class="card-body">
+            <div class="row">
+             <div class="float-left">
+                <ul class="list-unstyled mb-0">
+                  	<li> <a href='/videos'>Videos</a> </li>
+                 	 <li> <a href='/recipes'>Recipes</a> </li>
+                  	<li> <a href='/todo'>To Do List</a> </li>
+                </ul>
+              
+      
+			</div>
+		</div>
+        </div>
+          </div>
+
+
+        <!-- Blog Post -->
+		  		  <!-- <div class="text-center">
+
+        <div class="card mb-4">
+          <img class="card-img-top" src="https://static.wixstatic.com/media/b11283_a4efb76b508b448c98642fb0118e5821~mv2.png/v1/fill/w_1198,h_898,al_c,q_90/b11283_a4efb76b508b448c98642fb0118e5821~mv2.webp" alt="Card image cap">
+          <div class="card-body">
+            <p class="card-text">Simon Hooper, better known as @father_of_daughters, is Instagram's most beloved dad! Along with his midwife wife Clemmie, @mother_of_daughters, Simon has brought a whole new level of awareness around pregnancy, birth, and parenthood, sharing his family life and fatherhood experiences with his one million followers. I am obsessed with his content, just check out this video.
+
+
+Simon's book, Forever Outnumbered (Or "DADLIFE" in the US), is a must read for mothers and fathers-to-be.
+
+
+I asked Simon his advice on how to be a great pregnancy and birth partner, and learned SO MUCH from our conversation. I cannot wait to read his book. Enjoy our interview!
+
+</p>
+            <a href="/register" class="btn btn-primary" target="_blank" >Read More &rarr;</a>
+          </div>
+          <div class="card-footer text-muted">
+      
+          </div>
+        </div>
+
+		  </div> -->
+        <!-- Blog Post -->
+		  <!-- <div class="text-center">
+			  
+        <div class="card mb-4">
+          <img class="card-img-top" src="https://static.wixstatic.com/media/b11283_5f7dce5fcd0b43f4ba90b02cc11550bd~mv2.jpg/v1/fill/w_1080,h_1080,al_c,q_90/b11283_5f7dce5fcd0b43f4ba90b02cc11550bd~mv2.webp" alt="Card image cap">
+          <div class="card-body">
+            <h2 class="card-title">Melissa Wood on Preparing for Birth, Cesareans, and Postpartum Health
+</h2>
+            <p class="card-text">Melissa Wood is taking Instagram by storm with her work-out flows, vegan diet, breakfast juices, and adorable babies! This mama works hard for her health and body, and is always real when sharing about her pregnancy, birth, and postpartum. I asked her about her pregnancy journeys, birth stories, and favorite tips and tricks for the Millennial Bump followers.
+
+</p>
+            <a href="/register" target="_blank" class="btn btn-primary">Read More </a>
+          </div>
+          <div class="card-footer text-muted">
+          
+          </div>
+</div>
+        		  </div> -->
+		  <div class="row">
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="/w3images/lights.jpg">
+        <img src="https://static.wixstatic.com/media/b11283_a4efb76b508b448c98642fb0118e5821~mv2.png/v1/fill/w_1198,h_898,al_c,q_90/b11283_a4efb76b508b448c98642fb0118e5821~mv2.webp" alt="Lights" style="width:100%">
+        <div class="caption">
+          <p>Father of Daughters! Simon Hooper gives us advice on how to be a great birth partners.
+
+</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="/w3images/nature.jpg">
+        <img src="https://static.wixstatic.com/media/b11283_08467a6bcbc1439db9de3e85b75e858f~mv2.jpg/v1/fill/w_1000,h_667,al_c,q_90/b11283_08467a6bcbc1439db9de3e85b75e858f~mv2.webp" alt="Nature" style="width:200%">
+        <div class="caption">
+          <p>Whitney Port: We are getting REAL!
+</p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <a href="/w3images/fjords.jpg">
+        <img src="https://static.wixstatic.com/media/b11283_5f7dce5fcd0b43f4ba90b02cc11550bd~mv2.jpg/v1/fill/w_1080,h_1080,al_c,q_90/b11283_5f7dce5fcd0b43f4ba90b02cc11550bd~mv2.webp" alt="Fjords" style="width:100%">
+        <div class="caption">
+          <p>Melissa Wood on Preparing for Birth, Cesareans, and Postpartum Health
+</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center mb-4">
+          <li class="page-item">
+            <a class="page-link" href="#">&larr; Older</a>
+          </li>
+          <li class="page-item disabled">
+            <a class="page-link" href="#">Newer &rarr;</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <!-- Sidebar Widgets Column -->
+      <div class="col-md-4">
+
+        <!-- <!-- Search Widget -->
+        
+
+	  </div>
+		</div>
+ 
+
+</body>
+</html>
+
+<style>
+body {
+   
+  background-position: center;
+  background-repeat: inherit;
+  background-attachment: scroll;
+	background-image: url(https://images.unsplash.com/photo-1528459584353-5297db1a9c01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1975&q=80 )
+
+}
+
+div h1 {
+  color:#E80A71;
+  font-size: 100px;
+  font-weight: bolder;
+   font-family: 'Amatic SC', cursive;
+	text-align: center;
+
+}
+.row a { 
+ text-decoration:underline  ;
+}
+ nav{
+ position: fixed;
+ top: 0%;
+ }
+	img{
+		position: center;
+	}
+	</style>
