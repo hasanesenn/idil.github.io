@@ -19,7 +19,7 @@ var commentRoutes    = require("./routes/comments"),
 // var url = process.env.DATABASEURL || "mongodb://localhost/yelp_camp/Final;
 // mongoose.connect(url);
 
-mongoose.connect("mongodb://localhost/Idil",{
+mongoose.connect("mongodb+srv://idiloks:idiloks2003@cluster0.urga2.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",{
 useNewUrlParser: true,
 useUnifiedTopology: true,
 });
